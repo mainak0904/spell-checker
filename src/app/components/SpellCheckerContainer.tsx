@@ -3,6 +3,7 @@
 import React from 'react'
 import FileUploader from './CSVUploader'
 import WordChecker from './WordChecker'
+import { Divider } from "@nextui-org/divider";
 
 const SpellCheckerContainer = () => {
 
@@ -13,6 +14,7 @@ const SpellCheckerContainer = () => {
                     <WordChecker />
                 </div>
             </div>
+            <Divider className="my-40" />
             <div className='w-full'>
                 <FileUploader />
             </div>

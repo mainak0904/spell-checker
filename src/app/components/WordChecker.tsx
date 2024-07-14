@@ -7,7 +7,7 @@ import { CorrectedWord } from '../types/CorrectedWord';
 const WordChecker = () => {
     const [word, setWord] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    const [correctedWord, setCorrectedWord] = useState<CorrectedWord>({})
+    const [correctedWord, setCorrectedWord] = useState<CorrectedWord>()
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setWord(event.target.value.trim()); // Trim leading/trailing spaces
