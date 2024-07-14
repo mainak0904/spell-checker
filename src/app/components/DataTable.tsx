@@ -3,8 +3,6 @@ import React from 'react'
 import { CorrectedWord } from '../types/CorrectedWord';
 import { RowColType } from '../types/RowCol';
 
-
-
 type DataTableProps = {
     rows: CorrectedWord[];
     columns: RowColType[];
