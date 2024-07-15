@@ -1,12 +1,16 @@
+import NavBar from "./components/NavBar";
 import SpellCheckerContainer from "./components/SpellCheckerContainer";
 
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <SpellCheckerContainer />
-      </div>
-    </main>
+    <div className="dark text-foreground bg-background">
+      <NavBar />
+      <main className="flex min-h-screen flex-col items-center justify-between px-4 py-8">
+        <div className="flex justify-items-center w-full">
+          <SpellCheckerContainer />
+        </div>
+      </main>
+    </div>
   );
 }

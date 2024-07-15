@@ -12,7 +12,13 @@ type DataTableProps = {
 const DataTable: React.FC<DataTableProps> = ({ rows, columns }) => {
 
     return (
-        <Table aria-label="Example table with dynamic content">
+        <Table aria-label="Example table with dynamic content"
+            isHeaderSticky
+            bottomContentPlacement="outside"
+            classNames={{
+                wrapper: "max-h-[382px]",
+            }}
+        >
             <TableHeader>
                 {columns.map((column) =>
                     <TableColumn key={column.key}>{column.value}</TableColumn>

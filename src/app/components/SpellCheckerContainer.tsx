@@ -3,21 +3,29 @@
 import React from 'react'
 import FileUploader from './CSVUploader'
 import WordChecker from './WordChecker'
-import { Divider } from "@nextui-org/divider";
+import { Tabs, Tab } from '@nextui-org/tabs';
+import { Card, CardBody } from '@nextui-org/card';
 
 const SpellCheckerContainer = () => {
 
     return (
-        <div className='space-y-4'>
-            <div className='flex'>
-                <div className='w-50'>
-                    <WordChecker />
-                </div>
-            </div>
-            <Divider className="my-40" />
-            <div className='w-full'>
-                <FileUploader />
-            </div>
+        <div className="flex w-full flex-col">
+            <Tabs aria-label="Options">
+                <Tab key="wordChecker" title="Check Word">
+                    <Card className='w-full'>
+                        <CardBody>
+                            <WordChecker />
+                        </CardBody>
+                    </Card>
+                </Tab>
+                <Tab key="csvUploader" title="Upload File">
+                    <Card className='w-full'>
+                        <CardBody>
+                            <FileUploader />
+                        </CardBody>
+                    </Card>
+                </Tab>
+            </Tabs>
         </div>
     )
 }

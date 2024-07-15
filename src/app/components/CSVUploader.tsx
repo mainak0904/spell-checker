@@ -53,32 +53,46 @@ const CSVUploader = () => {
     };
 
     return (
-        <>
-            <FileUploadButton
-                size='lg'
-                accept='.csv'
-                startContent={<PiUploadSimpleBold />}
-                rejectProps={{ color: 'danger', startContent: <PiXCircleBold /> }}
-                onUpload={(files) => {
-                    if (files.length > 0) {
-                        onUpload(files[0]);
-                    }
-                }}
-            >
-                Upload
-            </FileUploadButton>
+        <div className='mx-4'>
+            <div className='flex mb-4'>
+                <FileUploadButton
+                    size='lg'
+                    accept='.csv'
+                    className='mr-5'
+                    startContent={<PiUploadSimpleBold />}
+                    rejectProps={{ color: 'danger', startContent: <PiXCircleBold /> }}
+                    onUpload={(files) => {
+                        if (files.length > 0) {
+                            onUpload(files[0]);
+                        }
+                    }}
+                >
+                    Upload
+                </FileUploadButton>
 
-            <Button
-                onClick={downloadCsv}
-                color="primary"
-                size='lg'
-                disabled={!rowData}
-            >
-                Download CSV
-            </Button>
+                <Button
+                    onClick={downloadCsv}
+                    color="primary"
+                    size='lg'
+                    disabled={!rowData}
+                >
+                    Download CSV
+                </Button>
+            </div>
+            <div className='flex w-full justify-between'>
+                {rowData && <div className='py-4 w-50'>
+                    <h1 className='mb-4'>Input</h1>
+                    {rowData && <DataTable rows={rowData} columns={columns} />}
+                </div>}
 
-            {rowData && <DataTable rows={rowData} columns={columns} />}
-        </>
+                {rowData && <div className='w-50 py-4'>
+                    <h1 className='mb-4'>Output</h1>
+                    {rowData && <DataTable rows={rowData} columns={columns} />}
+                </div>}
+
+            </div>
+
+        </div>
     );
 };
 
